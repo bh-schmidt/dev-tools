@@ -1,0 +1,25 @@
+<div style="text-align: center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pg-blue">
+            <li class="page-item"><a class="page-link" (click)='irParaPrimeiraPagina()'>Primeiro</a></li>
+            <li class="page-item"><a class="page-link" (click)='irParaPaginaAnterior()'>Anterior</a></li>
+            <li class="page-item"><a class="page-link" *ngFor='let pagina of paginasAnteriores'
+                    (click)='selecionarPagina(pagina)'>{{pagina}}</a></li>
+            <li class="page-item active"><a class="page-link">{{paginaAtual}}</a></li>
+            <li class="page-item"><a class="page-link" *ngFor='let pagina of paginasPosteriores'
+                    (click)='selecionarPagina(pagina)'>{{pagina}}</a></li>
+            <li class="page-item"><a class="page-link" (click)='irParaPaginaPosterior()'>Próximo</a></li>
+            <li class="page-item"><a class="page-link" (click)='irParaUltimaPagina()'>Último</a></li>
+        </ul>
+    </nav>
+    <div class='form-inline' style='display: inline; margin: 10px;'>
+        <label for='paginas'>Registros por Página: </label>
+        <select id='paginas' class="form-control" [(ngModel)]="registrosPorPagina"
+            (change)='selecionarRegistrosPorPagina()'>
+            <option *ngFor='let item of listaRegistrosPorPagina' [ngValue]="item">{{item}}</option>
+        </select>
+    </div>
+    <div style='display: inline; margin: 10px;'>
+        <span>{{totalRegistros}}</span> <span>Resultado(s)</span>
+    </div>
+</div>

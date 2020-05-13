@@ -1,0 +1,36 @@
+<h4 class="agrupador">{{nome}}</h4>
+
+<div>
+    <input id="uploadFile" name="uploadFile" type="file" [(ngModel)]="file" (change)="onUploadFile($event)" accept="*"
+        class="filestyle" data-buttonname="btn-primary" tabindex="-1"
+        style="position: absolute; clip: rect(0px 0px 0px 0px);">
+
+    <div class='text-right'>
+        <label for="uploadFile" class="btn btn-primary ">
+            <span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
+            <span class="buttonText">Escolha o arquivo</span>
+        </label>
+    </div>
+</div>
+
+
+<div style='margin: 20px 0px 0px 0px'>
+    <div class='row' *ngFor="let arquivo of arquivos">
+        <div class="col col-xs-9">
+            <label class="control-label" (click)="downloadArquivo(arquivo)"
+                style='cursor: pointer;'>{{ arquivo.nomeArquivo }}<span
+                    *ngIf='arquivo.extensao'>.{{arquivo.extensao}}</span>
+            </label>
+        </div>
+
+        <div class="col col-xs-3 text-right">
+            <button type='button' class="btn btn-secondary-outline btn" (click)="downloadArquivo(arquivo)">
+                <span class="fa fa-download"></span>
+            </button>
+
+            <button type='button' class="btn btn-secondary-outline btn " (click)="excluirArquivo(arquivo)">
+                <span class="fa fa-trash"></span>
+            </button>
+        </div>
+    </div>
+</div>

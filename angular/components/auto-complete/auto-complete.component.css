@@ -1,0 +1,31 @@
+.auto-complete {
+    position: relative;
+}
+
+.auto-complete-list-container {
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 10px;
+  left:0;
+  right:0;
+  box-sizing: border-box;
+}
+
+.auto-complete-item-list {
+  max-height: 300px;
+  min-width: 300px;
+  overflow: auto;
+}
+
+.auto-complete-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.auto-complete-item:hover,
+.auto-complete-item.selected {
+  background: #d5d5d5;
+}

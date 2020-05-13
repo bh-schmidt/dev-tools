@@ -1,0 +1,15 @@
+<div class='auto-complete'>
+    <input class='form-control' [(ngModel)]='busca' (focus)='onComponentFocus()' (blur)='onComponentBlur()' (keydown)='onKeyDown($event)'
+        [placeholder]='placeholder' style='margin-bottom: 0 !important;' (keyup)='onKeyUp()'>
+
+    <div class='auto-complete-list-container' *ngIf='listaVisivel'>
+        <div class='text-center' *ngIf='!contemItensFiltrados()'>
+            Nenhum registro encontrado
+        </div>
+
+        <div class='auto-complete-item-list' *ngIf='contemItensFiltrados()'>
+            <div #itemElement *ngFor='let upperCaseItem of filtrarItens()' class='auto-complete-item {{obterClasseSelecionado(upperCaseItem)}}'
+                (mousedown)='onSelectItem(upperCaseItem)'>{{upperCaseItem.item.valor}}</div>
+        </div>
+    </div>
+</div>
