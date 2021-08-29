@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  seq:
+    container_name: ${container_name}
+    image: datalust/seq:2020.1
+    restart: unless-stopped
+    ports:
+      - ${port}:80
+    environment:
+      - ACCEPT_EULA=Y

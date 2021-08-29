@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  database:
+    container_name: ${container_name}
+    image: mcr.microsoft.com/mssql/server:2019-CU12-ubuntu-20.04
+    restart: unless-stopped
+    user: root
+    ports:
+      - ${port}:1433
+    volumes:
+      - ./backup/data:/var/opt/mssql/data
+    environment: 
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${sa_password}
