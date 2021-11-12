@@ -1,0 +1,10 @@
+SCRIPT_VERSION=1.0.0
+
+API_PROJECT_DIRECTORY=./templates/api/controller.txt
+API_PROJECT_FOLDER=./templates/api/
+CONTROLLER_FOLDER=./Controllers
+API_NAMESPACE=Api
+SERVICE_PROJECT_DIRECTORY=./templates/service/input.txt
+SERVICE_PROJECT_FOLDER=./templates/service/
+SERVICE_FOLDER=./Services
+SERVICE_NAMESPACE=Service

@@ -1,0 +1,42 @@
+using MediatR;
+using Microsoft.Extensions.Logging;
+using Strategio.Core.UseCases.Outputs;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace {ServiceNamespace}.{ServiceName}
+{
+    public class {ServiceName} : IRequestHandler<{ServiceName}Input, Output>
+    {
+        private readonly ILogger<{ServiceName}> logger;
+
+        public {ServiceName}(
+            ILogger<{ServiceName}> logger)
+        {
+            this.logger = logger;
+        }
+
+        public async Task<Output> Handle({ServiceName}Input request, CancellationToken cancellationToken)
+        {
+            var output = new Output();
+
+            try
+            {
+                logger.LogInformation("starting {ServiceName}");
+                await HandleInternal(request, output);
+                logger.LogInformation("finishing {ServiceName}");
+                return output;
+            }
+            catch (System.Exception ex)
+            {
+                logger.LogInformation(ex, "error on {ServiceName}");
+                throw;
+            }
+        }
+
+        private async Task HandleInternal({ServiceName}Input request, Output output)
+        {
+            await Task.CompletedTask;
+        }
+    }
+}

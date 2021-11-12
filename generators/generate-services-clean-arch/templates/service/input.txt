@@ -1,0 +1,9 @@
+using MediatR;
+using Strategio.Core.UseCases.Outputs;
+
+namespace {ServiceNamespace}.{ServiceName}
+{
+    public class {ServiceName}Input : IRequest<Output>
+    {
+    }
+}

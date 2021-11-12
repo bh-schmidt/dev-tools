@@ -1,0 +1,6 @@
+namespace {ServiceNamespace}.{ServiceName}
+{
+    public class {ServiceName}Output
+    {
+    }
+}
