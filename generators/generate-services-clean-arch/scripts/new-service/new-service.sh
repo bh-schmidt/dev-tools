@@ -9,8 +9,8 @@ echo "Loading configuration"
 . ./scripts/new-service/questions.sh
 
 echo "Generating files..."
-SERVICE_NAMESPACE="XPInc.ForwardMarket.Settlement.Service.Application.UseCases"
-CONTROLLER_NAMESPACE="XPInc.ForwardMarket.Settlement.Service.WebApi.Controllers.v1"
+# SERVICE_NAMESPACE="XPInc.ForwardMarket.Settlement.Service.Application.UseCases"
+# CONTROLLER_NAMESPACE="XPInc.ForwardMarket.Settlement.Service.WebApi.Controllers.v1"
 
 . ./scripts/new-service/service/create-service.sh
 . ./scripts/new-service/service/create-input.sh

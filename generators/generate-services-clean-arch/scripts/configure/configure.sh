@@ -16,15 +16,15 @@ API_PROJECT=$(cat $API_PROJECT_DIRECTORY)
 SERVICE_PROJECT=$(cat $API_PROJECT_DIRECTORY)
 
 # change the namespace
-API_NAMESPACE=$(echo "$API_PROJECT" | sed -n 's/.*<RootNamespace>\(.*\)<\/RootNamespace>.*/\1/p')
-SERVICE_NAMESPACE=$(echo "$SERVICE_PROJECT" | sed -n 's/.*<RootNamespace>\(.*\)<\/RootNamespace>.*/\1/p')
+API_PROJECT_NAMESPACE=$(echo "$API_PROJECT" | sed -n 's/.*<RootNamespace>\(.*\)<\/RootNamespace>.*/\1/p')
+SERVICE_PROJECT_NAMESPACE=$(echo "$SERVICE_PROJECT" | sed -n 's/.*<RootNamespace>\(.*\)<\/RootNamespace>.*/\1/p')
 
-if [ -z $API_NAMESPACE ]; then
-    API_NAMESPACE=$(./scripts/shared/read_required_text.sh "Namespace of api couldn't be found. Inform it here.")
+if [ -z $API_PROJECT_NAMESPACE ]; then
+    API_PROJECT_NAMESPACE=$(./scripts/shared/read_required_text.sh "Namespace of api couldn't be found. Inform it here.")
 fi
 
-if [ -z $SERVICE_NAMESPACE ]; then
-    SERVICE_NAMESPACE=$(./scripts/shared/read_required_text.sh "Namespace of service couldn't be found. Inform it here.")
+if [ -z $SERVICE_PROJECT_NAMESPACE ]; then
+    SERVICE_PROJECT_NAMESPACE=$(./scripts/shared/read_required_text.sh "Namespace of service couldn't be found. Inform it here.")
 fi
 
 API_PROJECT_FOLDER=$(echo "$API_PROJECT_DIRECTORY" | sed -e 's/[^/]*$//g')
@@ -41,9 +41,9 @@ SCRIPT_VERSION=$SCRIPT_VERSION
 API_PROJECT_DIRECTORY=$API_PROJECT_DIRECTORY
 API_PROJECT_FOLDER=$API_PROJECT_FOLDER
 CONTROLLER_FOLDER=$CONTROLLER_FOLDER
-API_NAMESPACE=$API_NAMESPACE
+API_PROJECT_NAMESPACE=$API_PROJECT_NAMESPACE
 SERVICE_PROJECT_DIRECTORY=$SERVICE_PROJECT_DIRECTORY
 SERVICE_PROJECT_FOLDER=$SERVICE_PROJECT_FOLDER
 SERVICE_FOLDER=$SERVICE_FOLDER
-SERVICE_NAMESPACE=$SERVICE_NAMESPACE
+SERVICE_PROJECT_NAMESPACE=$SERVICE_PROJECT_NAMESPACE
 EOF
