@@ -1,6 +1,8 @@
+BASE_DIRECTORY=$(dirname "$0")
+
 read_key() {
     local input
-    while ! ./scripts/shared/contains.sh $@ $input; do
+    while ! "$BASE_DIRECTORY/scripts/shared/contains.sh" $@ $input; do
         read -rsn1 input
     done
     echo $input

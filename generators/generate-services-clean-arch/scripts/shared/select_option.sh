@@ -5,7 +5,7 @@ select_option() {
     fi
 
     local choice
-    while ! ./scripts/shared/contains.sh ${SELECT_DATA[@]} $choice; do
+    while ! $BASE_DIRECTORY/scripts/shared/contains.sh ${SELECT_DATA[@]} $choice; do
         echo "$SELECT_MESSAGE"
         select opt in "${SELECT_DATA[@]}"; do
             case $opt in

@@ -1,5 +1,5 @@
 echo "
-Usage: generator new [OPTIONS] <directory>
+Usage: classgen new [OPTIONS] <directory>
 Generates a new service for the solution inside the specified directory.
 
 Options:

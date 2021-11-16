@@ -1,5 +1,5 @@
 echo "
-Usage: generator configure [OPTIONS] <directory>
+Usage: classgen configure [OPTIONS] <directory>
 Configures the generator to the specified folder.
 
 Options:

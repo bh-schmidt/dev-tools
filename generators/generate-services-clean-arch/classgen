@@ -1,0 +1,38 @@
+#!/bin/sh
+SCRIPT_VERSION="1.0.0"
+
+BASE_DIRECTORY=$(dirname "$0")
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    . $BASE_DIRECTORY/help.sh
+    exit 1
+fi
+
+if [ "$1" = "new" ]; then
+    if [ "$2" = "-h" ] || [ "$2" = "--help" ]; then
+        . $BASE_DIRECTORY/scripts/new-service/help.sh
+        exit 1
+    fi
+    PARAMETERS=("$@")
+    . $BASE_DIRECTORY/scripts/new-service/new-service.sh
+    exit 1
+fi
+
+if [ "$1" = "configure" ]; then
+    if [ "$2" = "-h" ] || [ "$2" = "--help" ]; then
+        . $BASE_DIRECTORY/scripts/configure/help.sh
+        exit 1
+    fi
+    PARAMETERS=("$@")
+    . $BASE_DIRECTORY/scripts/configure/configure.sh
+    exit 1
+fi
+
+if [ "$1" = "-v" ] || [ "$1" = "--version" ]; then
+    echo "Version: $SCRIPT_VERSION"
+    exit 1
+fi
+
+
+
+echo "Run 'classgen -h' to see how to use the generator."
