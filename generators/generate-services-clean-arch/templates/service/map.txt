@@ -1,0 +1,9 @@
+using AutoMapper;
+
+[ExcludeFromCodeCoverage]
+namespace {ServiceNamespace}.{ServiceName}
+{
+    public class {ServiceName}MapProfile : Profile
+    {
+    }
+}

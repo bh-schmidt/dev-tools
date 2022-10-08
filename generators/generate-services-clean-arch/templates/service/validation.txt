@@ -1,5 +1,6 @@
 using FluentValidation;
 
+[ExcludeFromCodeCoverage]
 namespace {ServiceNamespace}.{ServiceName}
 {
     public class {ServiceName}InputValidation : AbstractValidator<{ServiceName}Input>

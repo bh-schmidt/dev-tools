@@ -1,20 +1,22 @@
 echo Bash profile loaded
 
 
+alias ebash="vim ~/.bash_profile"
+alias rbash="source ~/.bash_profile"
+
 #Change Directory
 ##Personal
-alias cdworkspace="cd /c/workspace/"
-alias cdworkspace-utils="cd /c/workspace/workspace-utils/"
-alias cdmongodb="cd /c/workspace/ddd-with-mongodb/"
-alias cdmarketplace="cd /c/workspace/marketplace-with-ddd/"
-alias cdfastsharper="cd /c/workspace/fast-sharper"
-alias cdsso="cd /c/workspace/sso"
-alias cdmacro="cd /c/workspace/chronos-macro-pxg"
-alias cdtextstostudy="cd /c/workspace/texts-to-study/src"
-
+alias cdworkspace="cd /g/workspace/personal"
+alias cdworkspace-utils="cd /g/workspace/personal/workspace-utils/"
+alias cdmongodb="cd /g/workspace/personal/ddd-with-mongodb/"
+alias cdmarketplace="cd /g/workspace/personal/marketplace-with-ddd/"
+alias cdfastsharper="cd /g/workspace/personal/fast-sharper"
+alias cdsso="cd /g/workspace/personal/sso"
+alias cdmacro="cd /g/workspace/personal/chronos-macro-pxg"
+alias cdtextstostudy="cd /g/workspace/personal/dotnet/texts-to-study/"
+alias cdfsquery="cd /g/workspace/personal/fs.query/src"
 
 ##Work
-
 
 #Git
 alias gs="git status -s $1 $2 $3 $4 $5 $6 $7 $8 $9"
@@ -28,6 +30,16 @@ alias gadd="git add $1 $2 $3 $4 $5 $6 $7 $8 $9"
 alias gdiff="git diff $1 $2 $3 $4 $5 $6 $7 $8 $9"
 alias gmerge="git merge $1 $2 $3 $4 $5 $6 $7 $8 $9"
 alias gdifftree="git diff-tree --pretty=\"full\" --name-only -r $1 $2 $3 $4 $5 $6 $7 $8 $9"
+
+function sort-by-size(){
+	du -sh -- *  | sort -rh
+}
+
+function textstart() {
+	cdtextstostudy
+	cd ./texts-to-study-gui/src
+	npm start
+}
 
 function cgs(){
 	clear
@@ -52,7 +64,7 @@ function gpull-origin(){
 }
 
 function gpush(){
-	git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	git push -u origin $(git rev-parse --abbrev-ref HEAD) $1 $2 $3 $4 $5 $6 $7 $8 $9
 }
 
 function glog(){

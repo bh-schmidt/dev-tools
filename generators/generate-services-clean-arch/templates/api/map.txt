@@ -1,0 +1,9 @@
+using AutoMapper;{Imports}
+
+[ExcludeFromCodeCoverage]
+namespace {ControllerNamespace}.{ServiceName}
+{
+    public class {ServiceName}MapProfile : Profile
+    {{Mapping}
+    }
+}
